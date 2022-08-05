@@ -1,4 +1,4 @@
-package com.graphql.demo;
+package com.parking.app;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;

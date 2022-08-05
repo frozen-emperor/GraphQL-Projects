@@ -1,8 +1,35 @@
 schema {
     query: Query
-#    mutation: Mutation
+    #    mutation: Mutation
 }
 
 type Query {
-    parkingLot: String!
+    valets: [Valet]!
+    valet(valetId: ID!): Valet
+}
+
+type Valet{
+    id: ID!
+    name: String!
+    location: String!
+    availableSlots: Int!
+    slots: [Slot]!
+}
+
+type Slot{
+    id: ID!
+    occupied: Boolean!
+    occupant: Vehicle
+}
+
+type Vehicle{
+    id: ID!
+    slot: Slot!
+    owner: User!
+}
+
+type User{
+    id: ID!
+    name: String!
+    vehicles: [Vehicle]
 }
