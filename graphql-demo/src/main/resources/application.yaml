@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: springboot-graphql-example
+
+  graphql:
+    servlet:
+      mapping: /graphql
+      enabled: true
+      corsEnabled: true
+    graphiql:
+      enabled: true
+      path: /graphiql
+    voyager:
+      enabled: true
+      basePath: /
+      mapping: /voyager
+      endpoint: /graphql
+      cdn:
+        enabled: false
+        version: latest
+      pageTitle: Voyager
+      displayOptions:
+        skipRelay: true
+        skipDeprecated: true
+        rootType: Query
+        sortByAlphabet: false
+        showLeafFields: true
+        hideRoot: false
+      hideDocs: false
+      hideSettings: false
+#      playground
+      playground:
+        mapping: /playground
+        endpoint: /graphql
+        subscriptionEndpoint: /subscriptions
+        staticPath.base: my-playground-resources-folder
+        enabled: true
+        pageTitle: Playground
+        cdn:
+          enabled: false
+          version: latest
+        settings:
+          editor.cursorShape: line
+          editor.fontFamily: "'Source Code Pro', 'Consolas', 'Inconsolata', 'Droid Sans Mono', 'Monaco', monospace"
+          editor.fontSize: 14
+          editor.reuseHeaders: true
+          editor.theme: dark
+          general.betaUpdates: false
+          prettier.printWidth: 80
+          prettier.tabWidth: 2
+          prettier.useTabs: false
+          request.credentials: omit
+          schema.polling.enable: true
+          schema.polling.endpointFilter: "*localhost*"
+          schema.polling.interval: 2000
+          schema.disableComments: true
+          tracing.hideTracingResponse: true
+        headers:
+          headerFor: AllTabs
+
